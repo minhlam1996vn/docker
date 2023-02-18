@@ -8,7 +8,7 @@ services:
     image: app
     container_name: 'app_${APP_NAME}'
     volumes:
-      - .:/var/www/html
+      - ./src:/var/www/html
     networks:
       - app-network
     environment:
@@ -23,8 +23,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./.docker/nginx.conf:/etc/nginx/nginx.conf
-      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./src:/var/www/html
     depends_on:
       - app
     networks:

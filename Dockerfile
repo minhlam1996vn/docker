@@ -21,7 +21,7 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs
 
 # Sao chép mã nguồn của Laravel vào thư mục /var/www/html
-COPY . /var/www/html
+COPY ./src /var/www/html
 
 # Đặt quyền sở hữu của tệp và thư mục của Laravel
 RUN chown -R www-data:www-data /var/www/html \
